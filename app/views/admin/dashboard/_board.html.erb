@@ -1,0 +1,19 @@
+<section class="dashboard__panel">
+  <h1 class="dashboard__panel-header">Total Products</h1>
+  <p class="dashboard__panel-value"><%= @data_hash[:product_count] %></p>  
+</section>
+
+<section class="dashboard__panel">
+  <h1 class="dashboard__panel-header">Total Category</h1>
+  <p class="dashboard__panel-value"><%= @data_hash[:category_count] %></p>  
+</section>
+
+<section class="dashboard__panel">
+  <h1 class="dashboard__panel-header">Number of Low-Stock Product</h1>
+  <p class="dashboard__panel-value"><%= @data_hash[:low_stock] %></p>  
+</section>
+
+<section class="dashboard__panel">
+  <h1 class="dashboard__panel-header">Total Order YTD</h1>
+  <p class="dashboard__panel-value"><%= @data_hash[:total_order] %></p>  
+</section>
