@@ -43,6 +43,7 @@
         </li> %>
       </ul>
       <ul class="navbar-nav">
+        <li><%= link_to 'About', [:about, :index], class: "nav-link" %></li>
         <li class="nav-item dropdown">
           <a
             class="nav-link dropdown-toggle text-danger"
@@ -63,6 +64,7 @@
           <%= link_to cart_path, class: "nav-link " do %> <%= fa_icon "shopping-cart" %>
           My Cart (<%= cart.size %>) <% end %>
         </li>
+        
       </ul>
     </div>
   </div>
