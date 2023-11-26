@@ -1,0 +1,13 @@
+<h1 class="h3 mb-3 font-weight-normal text-center">Login</h1>
+
+<%= form_tag '/login' do %>
+  <div class="form-row">
+    <label for="email" class="col-sm-2 col-form-label">
+      Email:
+    </label>
+    <%= text_field_tag :email, nil, class: 'form-control', type: 'email', placeholder: 'Email' %>
+  </div>
+  Password: <%= password_field_tag :password %>
+  <%= submit_tag "Submit" %>
+
+<% end %>
