@@ -34,11 +34,36 @@
             <%# Categories %>
           <%# </a>
           <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDropdown"> %>
-            <% Category.all.each do |category| %>
-            <li class="nav-item">
-              <%= link_to category.name, category, class: "nav-link" %>
-            </li>
+            <% categories = Category.all %>
+
+            <% if categories.count <= 4 %>
+              <% categories.each do |category| %>
+                <li class="nav-item">
+                  <%= link_to category.name, category, class: "nav-link" %>
+                </li>
+              <% end %>
+            <% else %>
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle text-danger"
+                  href="#"
+                  id="navbarDropdownAdmin"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  Categories
+                </a>
+                <ul class="dropdown-menu dropdown-menu-dark">
+                  <% categories.each do |category| %>
+                    <li class="nav-item">
+                      <%= link_to category.name, category, class: "nav-link" %>
+                    </li>
+                  <% end %>
+                </ul>
+              </li>
             <% end %>
+            
           <%# </ul>
         </li> %>
       </ul>
