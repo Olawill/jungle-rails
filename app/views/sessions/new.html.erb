@@ -1,4 +1,4 @@
-<h1 class="h3 mb-3 font-weight-normal text-center">Login</h1>
+<h1 class="h3 mt-3 font-weight-normal text-center">Login</h1>
 
 <%= form_tag '/login' do %>
   <div class="form-row">
@@ -7,7 +7,14 @@
     </label>
     <%= text_field_tag :email, nil, class: 'form-control', type: 'email', placeholder: 'Email' %>
   </div>
-  Password: <%= password_field_tag :password %>
-  <%= submit_tag "Submit" %>
+  <div class="form-row">
+    <label for="password" class="col-sm-2 col-form-label">
+      Password:
+    </label>
+    <%= password_field_tag :password, nil, class: 'form-control', type: 'password', placeholder: 'Password'  %>
+  </div>
+  <div class="form-row mt-2">
+    <%= submit_tag "Submit", class: "btn btn-primary" %>
+  </div>
 
 <% end %>

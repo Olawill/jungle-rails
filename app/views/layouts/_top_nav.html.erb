@@ -50,7 +50,7 @@
                   id="navbarDropdownAdmin"
                   role="button"
                   data-bs-toggle="dropdown"
-                  aria-expanded="false"
+                  aria-expanded="false"••••••••
                 >
                   Categories
                 </a>
@@ -68,8 +68,13 @@
         </li> %>
       </ul>
       <ul class="navbar-nav">
-        <li><%= link_to 'Login', '/login', class: "nav-link" %></li>
-        <li><%= link_to 'Registration', '/registration', class: "nav-link" %></li>
+        <% if current_user %>
+          <p class="nav-link m-0">Logged in as: <%= current_user.first_name %></p>
+          <li class="nav-item mb-0"><%= link_to 'Logout', '/logout', class: "nav-link btn-danger btn-sm rounded-1" %></li>
+        <% else %>
+          <li><%= link_to 'Login', '/login', class: "nav-link" %></li>
+          <li><%= link_to 'Registration', '/registration', class: "nav-link" %></li>
+        <% end %>
         <li><%= link_to 'About', [:about, :index], class: "nav-link" %></li>
         <li class="nav-item dropdown">
           <a
