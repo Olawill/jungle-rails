@@ -1,4 +1,4 @@
-describe('first', () => {
+describe('Product Details', () => {
   beforeEach(() => {
     cy.visit('http://localhost:3000')
 
